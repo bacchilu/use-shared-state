@@ -16,11 +16,7 @@ So, the idea is that I can share the same state between two or more components w
             setSharedState(sharedState + 1);
         };
 
-        return (
-            <button type="button" className="btn btn-primary btn-lg" style={{margin: '10px'}} onClick={onClick}>
-                {sharedState} +
-            </button>
-        );
+        return <button onClick={onClick}>{sharedState} +</button>;
     };
 
     const Button2 = function () {
@@ -30,9 +26,5 @@ So, the idea is that I can share the same state between two or more components w
             setSharedState(sharedState - 1);
         };
 
-        return (
-            <button type="button" className="btn btn-secondary btn-lg" style={{margin: '10px'}} onClick={onClick}>
-                {sharedState} -
-            </button>
-        );
+        return <button onClick={onClick}>{sharedState} -</button>;
     };

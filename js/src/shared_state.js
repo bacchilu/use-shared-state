@@ -3,21 +3,21 @@ import React from 'react';
 const data = {};
 
 export const useSharedState = function (key) {
-    if (data[key] === undefined) data[key] = {data: undefined, cb: []};
+    if (data[key] === undefined) data[key] = {data: undefined, callbacks: []};
     const privateData = data[key];
 
     const [currentState, setCurrentState] = React.useState(privateData.data);
     React.useEffect(
         function () {
-            const cb = function (d) {
-                setCurrentState(d);
+            const cb = function () {
+                setCurrentState(privateData.data);
             };
 
-            privateData.cb.push(cb);
+            privateData.callbacks.push(cb);
 
             return function () {
-                const index = privateData.cb.indexOf(cb);
-                privateData.cb.splice(index, 1);
+                const index = privateData.callbacks.indexOf(cb);
+                privateData.callbacks.splice(index, 1);
             };
         },
         [key]
@@ -25,8 +25,8 @@ export const useSharedState = function (key) {
 
     const mutate = function (value) {
         privateData.data = value;
-        privateData.cb.forEach(function (cb) {
-            cb(value);
+        privateData.callbacks.forEach(function (cb) {
+            cb();
         });
     };
 

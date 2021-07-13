@@ -33,15 +33,17 @@ const Button2 = function () {
 
 const App = function (props) {
     return (
-        <React.Fragment>
-            <p>
-                Hello! We are two different <em>React Components</em> sharing the same state and mutating it.
-            </p>
-            <p>
-                <Button1 />
-                <Button2 />
-            </p>
-        </React.Fragment>
+        <div className="card">
+            <div className="card-body">
+                <p>
+                    Hello! We are two different <em>React Components</em> sharing the same state and mutating it.
+                </p>
+                <p>
+                    <Button1 />
+                    <Button2 />
+                </p>
+            </div>
+        </div>
     );
 };
 

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {useSharedState} from './shared_state';
 
 const Button1 = function () {
-    const [sharedState, setSharedState] = useSharedState('key');
+    const [sharedState, setSharedState] = useSharedState('key', 0);
 
     const onClick = function () {
         setSharedState(sharedState + 1);
@@ -18,7 +18,7 @@ const Button1 = function () {
 };
 
 const Button2 = function () {
-    const [sharedState, setSharedState] = useSharedState('key');
+    const [sharedState, setSharedState] = useSharedState('key', 0);
 
     const onClick = function () {
         setSharedState(sharedState - 1);
@@ -32,11 +32,6 @@ const Button2 = function () {
 };
 
 const App = function (props) {
-    const [sharedState, setSharedState] = useSharedState('key');
-    React.useEffect(function () {
-        setSharedState(0);
-    }, []);
-
     return (
         <React.Fragment>
             <p>

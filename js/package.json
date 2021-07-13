@@ -1,7 +1,7 @@
 {
-    "name": "reactjs-project",
+    "name": "use-shared-state",
     "version": "1.0.0",
-    "description": "ReactJS Project",
+    "description": "useSharedState",
     "private": true,
     "scripts": {
         "update": "ncu -u",
@@ -9,7 +9,7 @@
         "build": "webpack --env production --config webpack.config.js",
         "deploy": "surge public"
     },
-    "author": "Luca Bacchi <bacchilu@gmail.com> (http://www.lucabacchi.it)",
+    "author": "Luca Bacchi <bacchilu@gmail.com> (https://github.com/bacchilu)",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.14.6",

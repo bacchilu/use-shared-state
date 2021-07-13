@@ -28,3 +28,7 @@ So, the idea is that I can share the same state between two or more components w
 
         return <button onClick={onClick}>{sharedState} -</button>;
     };
+
+It's possible to use an optional second argument to initialize the data:
+
+    const [sharedState, setSharedState] = useSharedState('key', 0);

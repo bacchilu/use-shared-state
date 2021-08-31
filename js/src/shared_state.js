@@ -2,8 +2,8 @@ import React from 'react';
 
 const data = {};
 
-export const useSharedState = function (key, initialData = undefined) {
-    if (data[key] === undefined) data[key] = {data: initialData, callbacks: []};
+export const useSharedState = function (key, fallbackData = undefined) {
+    if (data[key] === undefined) data[key] = {data: fallbackData, callbacks: []};
     const privateData = data[key];
 
     const [currentState, setCurrentState] = React.useState(privateData.data);
